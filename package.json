@@ -1,0 +1,21 @@
+{
+  "name": "my-harness",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "compile": "nerve compile",
+    "validate": "nerve validate",
+    "dev": "nerve dev",
+    "export": "nerve export",
+    "snapshot": "nerve snapshot"
+  },
+  "dependencies": {
+    "@grayhaven/nerve": "^8.0.0",
+    "@grayhaven/nerve-connectors": "^8.0.0"
+  },
+  "devDependencies": {
+    "@grayhaven/nerve-cli": "^8.0.0",
+    "typescript": "^5.8.0"
+  }
+}

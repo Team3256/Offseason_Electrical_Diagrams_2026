@@ -1,0 +1,6122 @@
+{
+  "schemaVersion": "0.1.0",
+  "harness": {
+    "id": "frc-robot",
+    "revision": "A",
+    "units": "mm",
+    "metadata": {
+      "status": "DRAFT: built from a text description; lengths, routing, and several gauges not yet supplied",
+      "pdpChannelsUsed": "24"
+    }
+  },
+  "connectors": [
+    {
+      "ref": "BAT",
+      "mpn": "BATTERY",
+      "description": "Robot battery (ASSUMPTION: not in description)",
+      "pinCount": 2,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "BAT_POS"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        }
+      ]
+    },
+    {
+      "ref": "CAM1",
+      "mpn": "USB-CAMERA",
+      "description": "USB camera",
+      "pinCount": 1,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "USB_CAM1"
+        }
+      ]
+    },
+    {
+      "ref": "CAM2",
+      "mpn": "USB-CAMERA",
+      "description": "USB camera",
+      "pinCount": 1,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "USB_CAM2"
+        }
+      ]
+    },
+    {
+      "ref": "CANIVORE",
+      "mpn": "CTRE-CANIVORE",
+      "description": "CANivore: CAN-H, CAN-L, USB to roboRIO",
+      "pinCount": 3,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            },
+            "terminationOhms": 120
+          }
+        },
+        {
+          "pin": "2",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            },
+            "terminationOhms": 120
+          }
+        },
+        {
+          "pin": "3",
+          "signal": "USB_CANIVORE"
+        }
+      ]
+    },
+    {
+      "ref": "FEEDER-RANGE1",
+      "mpn": "CTRE-CANRANGE",
+      "description": "CANrange: power + CAN",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM2_O1"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "FEEDER-RANGE2",
+      "mpn": "CTRE-CANRANGE",
+      "description": "CANrange: power + CAN",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM2_O2"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "FEEDER-X60-A",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH17",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "FEEDER-X60-B",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH18",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "HOOD-X44",
+      "mpn": "CTRE-KRAKEN-X44",
+      "description": "Kraken X44 (ASSUMPTION: same stud layout as X60)",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH23",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "terminationOhms": 120,
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "terminationOhms": 120,
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INDEXER-X60-A",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH15",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INDEXER-X60-B",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH16",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INTAKE-X44-A",
+      "mpn": "CTRE-KRAKEN-X44",
+      "description": "Kraken X44 (ASSUMPTION: same stud layout as X60)",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH13",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INTAKE-X44-B",
+      "mpn": "CTRE-KRAKEN-X44",
+      "description": "Kraken X44 (ASSUMPTION: same stud layout as X60)",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH14",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INTAKE-X60-A",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH11",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "INTAKE-X60-B",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH12",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "LL4",
+      "mpn": "LIMELIGHT-4",
+      "description": "Limelight 4: power + Ethernet",
+      "pinCount": 3,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "ETH_LL4"
+        }
+      ]
+    },
+    {
+      "ref": "MCB",
+      "mpn": "MAIN-BREAKER",
+      "description": "Main circuit breaker",
+      "pinCount": 2,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "BAT_POS"
+        },
+        {
+          "pin": "2",
+          "signal": "PWR_MAIN"
+        }
+      ]
+    },
+    {
+      "ref": "MITO",
+      "mpn": "MITOCANDRIA",
+      "description": "Mitocandria: 12V in, CAN, 2x USB-C 5V out",
+      "pinCount": 8,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH10"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "5",
+          "signal": "USBC1_5V"
+        },
+        {
+          "pin": "6",
+          "signal": "USBC1_GND"
+        },
+        {
+          "pin": "7",
+          "signal": "USBC2_5V"
+        },
+        {
+          "pin": "8",
+          "signal": "USBC2_GND"
+        }
+      ]
+    },
+    {
+      "ref": "MPM1",
+      "mpn": "MINI-POWER-MODULE",
+      "description": "Mini Power Module: 12V in + 6 low-current outputs",
+      "pinCount": 14,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O1"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "PWR_12V_MPM1_O2"
+        },
+        {
+          "pin": "4",
+          "signal": "GND"
+        },
+        {
+          "pin": "5",
+          "signal": "PWR_12V_MPM1_O3"
+        },
+        {
+          "pin": "6",
+          "signal": "GND"
+        },
+        {
+          "pin": "7",
+          "signal": "PWR_12V_MPM1_O4"
+        },
+        {
+          "pin": "8",
+          "signal": "GND"
+        },
+        {
+          "pin": "9",
+          "signal": "PWR_12V_MPM1_O5"
+        },
+        {
+          "pin": "10",
+          "signal": "GND"
+        },
+        {
+          "pin": "11",
+          "signal": "PWR_12V_MPM1_O6"
+        },
+        {
+          "pin": "12",
+          "signal": "GND"
+        },
+        {
+          "pin": "13",
+          "signal": "PWR_12V_MPM1_IN"
+        },
+        {
+          "pin": "14",
+          "signal": "GND"
+        }
+      ]
+    },
+    {
+      "ref": "MPM2",
+      "mpn": "MINI-POWER-MODULE",
+      "description": "Mini Power Module: 12V in + 6 low-current outputs",
+      "pinCount": 14,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM2_O1"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "PWR_12V_MPM2_O2"
+        },
+        {
+          "pin": "4",
+          "signal": "GND"
+        },
+        {
+          "pin": "13",
+          "signal": "PWR_12V_MPM2_IN"
+        },
+        {
+          "pin": "14",
+          "signal": "GND"
+        }
+      ]
+    },
+    {
+      "ref": "OPI1",
+      "mpn": "ORANGE-PI",
+      "description": "Orange Pi: Ethernet, USB-C power, USB (cameras)",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "ETH_OPI1"
+        },
+        {
+          "pin": "2",
+          "signal": "USBC1_5V"
+        },
+        {
+          "pin": "3",
+          "signal": "USBC1_GND"
+        },
+        {
+          "pin": "4",
+          "signal": "USB_CAM1"
+        }
+      ]
+    },
+    {
+      "ref": "OPI2",
+      "mpn": "ORANGE-PI",
+      "description": "Orange Pi: Ethernet, USB-C power, USB (cameras)",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "ETH_OPI2"
+        },
+        {
+          "pin": "2",
+          "signal": "USBC2_5V"
+        },
+        {
+          "pin": "3",
+          "signal": "USBC2_GND"
+        },
+        {
+          "pin": "4",
+          "signal": "USB_CAM2"
+        }
+      ]
+    },
+    {
+      "ref": "PDP",
+      "mpn": "CTRE-PDP-2.0",
+      "description": "PDP 2.0: 24 channels, battery in, common ground",
+      "pinCount": 28,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH00"
+        },
+        {
+          "pin": "2",
+          "signal": "PWR_12V_CH01"
+        },
+        {
+          "pin": "3",
+          "signal": "PWR_12V_CH02"
+        },
+        {
+          "pin": "4",
+          "signal": "PWR_12V_CH03"
+        },
+        {
+          "pin": "5",
+          "signal": "PWR_12V_CH04"
+        },
+        {
+          "pin": "6",
+          "signal": "PWR_12V_CH05"
+        },
+        {
+          "pin": "7",
+          "signal": "PWR_12V_CH06"
+        },
+        {
+          "pin": "8",
+          "signal": "PWR_12V_CH07"
+        },
+        {
+          "pin": "9",
+          "signal": "PWR_12V_CH08"
+        },
+        {
+          "pin": "10",
+          "signal": "PWR_12V_CH09"
+        },
+        {
+          "pin": "11",
+          "signal": "PWR_12V_CH10"
+        },
+        {
+          "pin": "12",
+          "signal": "PWR_12V_CH11"
+        },
+        {
+          "pin": "13",
+          "signal": "PWR_12V_CH12"
+        },
+        {
+          "pin": "14",
+          "signal": "PWR_12V_CH13"
+        },
+        {
+          "pin": "15",
+          "signal": "PWR_12V_CH14"
+        },
+        {
+          "pin": "16",
+          "signal": "PWR_12V_CH15"
+        },
+        {
+          "pin": "17",
+          "signal": "PWR_12V_CH16"
+        },
+        {
+          "pin": "18",
+          "signal": "PWR_12V_CH17"
+        },
+        {
+          "pin": "19",
+          "signal": "PWR_12V_CH18"
+        },
+        {
+          "pin": "20",
+          "signal": "PWR_12V_CH19"
+        },
+        {
+          "pin": "21",
+          "signal": "PWR_12V_CH20"
+        },
+        {
+          "pin": "22",
+          "signal": "PWR_12V_CH21"
+        },
+        {
+          "pin": "23",
+          "signal": "PWR_12V_CH22"
+        },
+        {
+          "pin": "24",
+          "signal": "PWR_12V_CH23"
+        },
+        {
+          "pin": "25",
+          "signal": "PWR_MAIN"
+        },
+        {
+          "pin": "26",
+          "signal": "GND"
+        },
+        {
+          "pin": "27",
+          "signal": "PWR_12V_MPM1_IN"
+        },
+        {
+          "pin": "28",
+          "signal": "PWR_12V_MPM2_IN"
+        }
+      ]
+    },
+    {
+      "ref": "PIGEON",
+      "mpn": "CTRE-PIGEON-2",
+      "description": "Pigeon IMU: power + CAN",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O5"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "RADIO",
+      "mpn": "ROBOT-RADIO",
+      "description": "Robot radio: power + Rio/AUX1/AUX2 Ethernet",
+      "pinCount": 5,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH09",
+          "terminal": "FERRULE-20AWG"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "FERRULE-20AWG"
+        },
+        {
+          "pin": "3",
+          "signal": "ETH_RADIO"
+        },
+        {
+          "pin": "4",
+          "signal": "ETH_OPI1"
+        },
+        {
+          "pin": "5",
+          "signal": "ETH_OPI2"
+        }
+      ]
+    },
+    {
+      "ref": "RIO",
+      "mpn": "NI-ROBORIO",
+      "description": "roboRIO: power, CAN, 1x Ethernet, USB-A",
+      "pinCount": 7,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH08"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "terminationOhms": 120,
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "terminationOhms": 120,
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "5",
+          "signal": "ETH_RADIO"
+        },
+        {
+          "pin": "6",
+          "signal": "USB_CANIVORE"
+        },
+        {
+          "pin": "7",
+          "signal": "ETH_LL4"
+        }
+      ]
+    },
+    {
+      "ref": "SHOOTER-X60-A",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH19",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SHOOTER-X60-B",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH20",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SHOOTER-X60-C",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH21",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SHOOTER-X60-D",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH22",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "RIO_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "positive"
+            },
+            "bitRateKbps": 1000
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "RIO_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_RIO",
+              "polarity": "negative"
+            },
+            "bitRateKbps": 1000
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BL-CC",
+      "mpn": "CTRE-CANCODER",
+      "description": "CANcoder with pigtails: 20AWG power, 2x 22AWG CAN pairs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O3"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BL-DRV",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH04",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BL-STR",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH05",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BR-CC",
+      "mpn": "CTRE-CANCODER",
+      "description": "CANcoder with pigtails: 20AWG power, 2x 22AWG CAN pairs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O4"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BR-DRV",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH06",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-BR-STR",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH07",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            },
+            "terminationOhms": 120
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            },
+            "terminationOhms": 120
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FL-CC",
+      "mpn": "CTRE-CANCODER",
+      "description": "CANcoder with pigtails: 20AWG power, 2x 22AWG CAN pairs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O1"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FL-DRV",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH00",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FL-STR",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH01",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FR-CC",
+      "mpn": "CTRE-CANCODER",
+      "description": "CANcoder with pigtails: 20AWG power, 2x 22AWG CAN pairs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_MPM1_O2"
+        },
+        {
+          "pin": "2",
+          "signal": "GND"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FR-DRV",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH02",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "ref": "SW-FR-STR",
+      "mpn": "CTRE-KRAKEN-X60",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "pinCount": 4,
+      "provenance": {
+        "verification": "unverified",
+        "source": "Team-supplied description"
+      },
+      "pins": [
+        {
+          "pin": "1",
+          "signal": "PWR_12V_CH03",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "2",
+          "signal": "GND",
+          "terminal": "RING-#6"
+        },
+        {
+          "pin": "3",
+          "signal": "IVORE_CAN_H",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "positive"
+            }
+          }
+        },
+        {
+          "pin": "4",
+          "signal": "IVORE_CAN_L",
+          "terminal": "RING-#4",
+          "electrical": {
+            "role": "bidirectional",
+            "protocol": "CAN",
+            "differential": {
+              "pair": "CAN_IVORE",
+              "polarity": "negative"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "wires": [
+    {
+      "id": "CAN_IVORE-H01",
+      "from": {
+        "connector": "CANIVORE",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "PIGEON",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP01",
+      "notes": "CANivore to Pigeon"
+    },
+    {
+      "id": "CAN_IVORE-H02",
+      "from": {
+        "connector": "PIGEON",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SW-FL-DRV",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP02",
+      "notes": "to FL drive motor"
+    },
+    {
+      "id": "CAN_IVORE-H03",
+      "from": {
+        "connector": "SW-FL-DRV",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "FL1"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP03",
+      "notes": "FL drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-H04",
+      "from": {
+        "splice": "FL1"
+      },
+      "to": {
+        "connector": "SW-FL-CC",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP04",
+      "notes": "FL CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-H05",
+      "from": {
+        "connector": "SW-FL-CC",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "FL3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP05",
+      "notes": "FL CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-H06",
+      "from": {
+        "splice": "FL3"
+      },
+      "to": {
+        "connector": "SW-FL-STR",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP06",
+      "notes": "FL CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-H07",
+      "from": {
+        "connector": "SW-FL-STR",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SW-FR-DRV",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP07",
+      "notes": "to FR drive motor"
+    },
+    {
+      "id": "CAN_IVORE-H08",
+      "from": {
+        "connector": "SW-FR-DRV",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "FR1"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP08",
+      "notes": "FR drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-H09",
+      "from": {
+        "splice": "FR1"
+      },
+      "to": {
+        "connector": "SW-FR-CC",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP09",
+      "notes": "FR CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-H10",
+      "from": {
+        "connector": "SW-FR-CC",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "FR3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP10",
+      "notes": "FR CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-H11",
+      "from": {
+        "splice": "FR3"
+      },
+      "to": {
+        "connector": "SW-FR-STR",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP11",
+      "notes": "FR CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-H12",
+      "from": {
+        "connector": "SW-FR-STR",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SW-BL-DRV",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP12",
+      "notes": "to BL drive motor"
+    },
+    {
+      "id": "CAN_IVORE-H13",
+      "from": {
+        "connector": "SW-BL-DRV",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "BL1"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP13",
+      "notes": "BL drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-H14",
+      "from": {
+        "splice": "BL1"
+      },
+      "to": {
+        "connector": "SW-BL-CC",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP14",
+      "notes": "BL CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-H15",
+      "from": {
+        "connector": "SW-BL-CC",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "BL3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP15",
+      "notes": "BL CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-H16",
+      "from": {
+        "splice": "BL3"
+      },
+      "to": {
+        "connector": "SW-BL-STR",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP16",
+      "notes": "BL CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-H17",
+      "from": {
+        "connector": "SW-BL-STR",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SW-BR-DRV",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP17",
+      "notes": "to BR drive motor"
+    },
+    {
+      "id": "CAN_IVORE-H18",
+      "from": {
+        "connector": "SW-BR-DRV",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "BR1"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP18",
+      "notes": "BR drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-H19",
+      "from": {
+        "splice": "BR1"
+      },
+      "to": {
+        "connector": "SW-BR-CC",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP19",
+      "notes": "BR CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-H20",
+      "from": {
+        "connector": "SW-BR-CC",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "BR3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP20",
+      "notes": "BR CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-H21",
+      "from": {
+        "splice": "BR3"
+      },
+      "to": {
+        "connector": "SW-BR-STR",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "IVORE_CAN_H",
+      "twistGroup": "CAN_IVORE-TP21",
+      "notes": "BR CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-L01",
+      "from": {
+        "connector": "CANIVORE",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PIGEON",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP01",
+      "notes": "CANivore to Pigeon"
+    },
+    {
+      "id": "CAN_IVORE-L02",
+      "from": {
+        "connector": "PIGEON",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SW-FL-DRV",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP02",
+      "notes": "to FL drive motor"
+    },
+    {
+      "id": "CAN_IVORE-L03",
+      "from": {
+        "connector": "SW-FL-DRV",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "FL2"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP03",
+      "notes": "FL drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-L04",
+      "from": {
+        "splice": "FL2"
+      },
+      "to": {
+        "connector": "SW-FL-CC",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP04",
+      "notes": "FL CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-L05",
+      "from": {
+        "connector": "SW-FL-CC",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "FL4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP05",
+      "notes": "FL CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-L06",
+      "from": {
+        "splice": "FL4"
+      },
+      "to": {
+        "connector": "SW-FL-STR",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP06",
+      "notes": "FL CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-L07",
+      "from": {
+        "connector": "SW-FL-STR",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SW-FR-DRV",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP07",
+      "notes": "to FR drive motor"
+    },
+    {
+      "id": "CAN_IVORE-L08",
+      "from": {
+        "connector": "SW-FR-DRV",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "FR2"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP08",
+      "notes": "FR drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-L09",
+      "from": {
+        "splice": "FR2"
+      },
+      "to": {
+        "connector": "SW-FR-CC",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP09",
+      "notes": "FR CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-L10",
+      "from": {
+        "connector": "SW-FR-CC",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "FR4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP10",
+      "notes": "FR CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-L11",
+      "from": {
+        "splice": "FR4"
+      },
+      "to": {
+        "connector": "SW-FR-STR",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP11",
+      "notes": "FR CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-L12",
+      "from": {
+        "connector": "SW-FR-STR",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SW-BL-DRV",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP12",
+      "notes": "to BL drive motor"
+    },
+    {
+      "id": "CAN_IVORE-L13",
+      "from": {
+        "connector": "SW-BL-DRV",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "BL2"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP13",
+      "notes": "BL drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-L14",
+      "from": {
+        "splice": "BL2"
+      },
+      "to": {
+        "connector": "SW-BL-CC",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP14",
+      "notes": "BL CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-L15",
+      "from": {
+        "connector": "SW-BL-CC",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "BL4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP15",
+      "notes": "BL CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-L16",
+      "from": {
+        "splice": "BL4"
+      },
+      "to": {
+        "connector": "SW-BL-STR",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP16",
+      "notes": "BL CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_IVORE-L17",
+      "from": {
+        "connector": "SW-BL-STR",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SW-BR-DRV",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP17",
+      "notes": "to BR drive motor"
+    },
+    {
+      "id": "CAN_IVORE-L18",
+      "from": {
+        "connector": "SW-BR-DRV",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "BR2"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP18",
+      "notes": "BR drive motor to CANcoder splice A"
+    },
+    {
+      "id": "CAN_IVORE-L19",
+      "from": {
+        "splice": "BR2"
+      },
+      "to": {
+        "connector": "SW-BR-CC",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP19",
+      "notes": "BR CANcoder pigtail pair 1"
+    },
+    {
+      "id": "CAN_IVORE-L20",
+      "from": {
+        "connector": "SW-BR-CC",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "BR4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP20",
+      "notes": "BR CANcoder pigtail pair 2"
+    },
+    {
+      "id": "CAN_IVORE-L21",
+      "from": {
+        "splice": "BR4"
+      },
+      "to": {
+        "connector": "SW-BR-STR",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "IVORE_CAN_L",
+      "twistGroup": "CAN_IVORE-TP21",
+      "notes": "BR CANcoder splice B to steer motor"
+    },
+    {
+      "id": "CAN_RIO-H01",
+      "from": {
+        "connector": "RIO",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "MITO",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP01",
+      "notes": "roboRIO to Mitocandria"
+    },
+    {
+      "id": "CAN_RIO-H02",
+      "from": {
+        "connector": "MITO",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INTAKE-X60-A",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP02",
+      "notes": "Intake X60 A"
+    },
+    {
+      "id": "CAN_RIO-H03",
+      "from": {
+        "connector": "INTAKE-X60-A",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INTAKE-X60-B",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP03",
+      "notes": "Intake X60 B"
+    },
+    {
+      "id": "CAN_RIO-H04",
+      "from": {
+        "connector": "INTAKE-X60-B",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INTAKE-X44-A",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP04",
+      "notes": "Intake X44 A"
+    },
+    {
+      "id": "CAN_RIO-H05",
+      "from": {
+        "connector": "INTAKE-X44-A",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INTAKE-X44-B",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP05",
+      "notes": "Intake X44 B"
+    },
+    {
+      "id": "CAN_RIO-H06",
+      "from": {
+        "connector": "INTAKE-X44-B",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INDEXER-X60-A",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP06",
+      "notes": "Indexer X60 A"
+    },
+    {
+      "id": "CAN_RIO-H07",
+      "from": {
+        "connector": "INDEXER-X60-A",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "INDEXER-X60-B",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP07",
+      "notes": "Indexer X60 B"
+    },
+    {
+      "id": "CAN_RIO-H08",
+      "from": {
+        "connector": "INDEXER-X60-B",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "FEEDER-X60-A",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP08",
+      "notes": "Feeder X60 A"
+    },
+    {
+      "id": "CAN_RIO-H09",
+      "from": {
+        "connector": "FEEDER-X60-A",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "FEEDER-X60-B",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP09",
+      "notes": "Feeder X60 B"
+    },
+    {
+      "id": "CAN_RIO-H10",
+      "from": {
+        "connector": "FEEDER-X60-B",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP10",
+      "notes": "Feeder CANrange 1"
+    },
+    {
+      "id": "CAN_RIO-H11",
+      "from": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP11",
+      "notes": "Feeder CANrange 2"
+    },
+    {
+      "id": "CAN_RIO-H12",
+      "from": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP12",
+      "notes": "Shooter X60 A"
+    },
+    {
+      "id": "CAN_RIO-H13",
+      "from": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP13",
+      "notes": "Shooter X60 B"
+    },
+    {
+      "id": "CAN_RIO-H14",
+      "from": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP14",
+      "notes": "Shooter X60 C"
+    },
+    {
+      "id": "CAN_RIO-H15",
+      "from": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP15",
+      "notes": "Shooter X60 D"
+    },
+    {
+      "id": "CAN_RIO-H16",
+      "from": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "HOOD-X44",
+        "pin": "3"
+      },
+      "gauge": "22AWG",
+      "color": "yellow",
+      "signal": "RIO_CAN_H",
+      "twistGroup": "CAN_RIO-TP16",
+      "notes": "Hood X44 (bus end)"
+    },
+    {
+      "id": "CAN_RIO-L01",
+      "from": {
+        "connector": "RIO",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "MITO",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP01",
+      "notes": "roboRIO to Mitocandria"
+    },
+    {
+      "id": "CAN_RIO-L02",
+      "from": {
+        "connector": "MITO",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INTAKE-X60-A",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP02",
+      "notes": "Intake X60 A"
+    },
+    {
+      "id": "CAN_RIO-L03",
+      "from": {
+        "connector": "INTAKE-X60-A",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INTAKE-X60-B",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP03",
+      "notes": "Intake X60 B"
+    },
+    {
+      "id": "CAN_RIO-L04",
+      "from": {
+        "connector": "INTAKE-X60-B",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INTAKE-X44-A",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP04",
+      "notes": "Intake X44 A"
+    },
+    {
+      "id": "CAN_RIO-L05",
+      "from": {
+        "connector": "INTAKE-X44-A",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INTAKE-X44-B",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP05",
+      "notes": "Intake X44 B"
+    },
+    {
+      "id": "CAN_RIO-L06",
+      "from": {
+        "connector": "INTAKE-X44-B",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INDEXER-X60-A",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP06",
+      "notes": "Indexer X60 A"
+    },
+    {
+      "id": "CAN_RIO-L07",
+      "from": {
+        "connector": "INDEXER-X60-A",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "INDEXER-X60-B",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP07",
+      "notes": "Indexer X60 B"
+    },
+    {
+      "id": "CAN_RIO-L08",
+      "from": {
+        "connector": "INDEXER-X60-B",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "FEEDER-X60-A",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP08",
+      "notes": "Feeder X60 A"
+    },
+    {
+      "id": "CAN_RIO-L09",
+      "from": {
+        "connector": "FEEDER-X60-A",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "FEEDER-X60-B",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP09",
+      "notes": "Feeder X60 B"
+    },
+    {
+      "id": "CAN_RIO-L10",
+      "from": {
+        "connector": "FEEDER-X60-B",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP10",
+      "notes": "Feeder CANrange 1"
+    },
+    {
+      "id": "CAN_RIO-L11",
+      "from": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP11",
+      "notes": "Feeder CANrange 2"
+    },
+    {
+      "id": "CAN_RIO-L12",
+      "from": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP12",
+      "notes": "Shooter X60 A"
+    },
+    {
+      "id": "CAN_RIO-L13",
+      "from": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP13",
+      "notes": "Shooter X60 B"
+    },
+    {
+      "id": "CAN_RIO-L14",
+      "from": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP14",
+      "notes": "Shooter X60 C"
+    },
+    {
+      "id": "CAN_RIO-L15",
+      "from": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP15",
+      "notes": "Shooter X60 D"
+    },
+    {
+      "id": "CAN_RIO-L16",
+      "from": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "HOOD-X44",
+        "pin": "4"
+      },
+      "gauge": "22AWG",
+      "color": "green",
+      "signal": "RIO_CAN_L",
+      "twistGroup": "CAN_RIO-TP16",
+      "notes": "Hood X44 (bus end)"
+    },
+    {
+      "id": "ETH-LL4-RIO",
+      "from": {
+        "connector": "LL4",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "RIO",
+        "pin": "7"
+      },
+      "signal": "ETH_LL4",
+      "notes": "UNRESOLVED: roboRIO has one Ethernet port (already used by radio); pin 7 is a placeholder"
+    },
+    {
+      "id": "ETH-RADIO-OPI1",
+      "from": {
+        "connector": "RADIO",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "OPI1",
+        "pin": "1"
+      },
+      "signal": "ETH_OPI1",
+      "notes": "Ethernet, radio AUX 1, COTS cable"
+    },
+    {
+      "id": "ETH-RADIO-OPI2",
+      "from": {
+        "connector": "RADIO",
+        "pin": "5"
+      },
+      "to": {
+        "connector": "OPI2",
+        "pin": "1"
+      },
+      "signal": "ETH_OPI2",
+      "notes": "Ethernet, radio AUX 2, COTS cable"
+    },
+    {
+      "id": "ETH-RIO-RADIO",
+      "from": {
+        "connector": "RIO",
+        "pin": "5"
+      },
+      "to": {
+        "connector": "RADIO",
+        "pin": "3"
+      },
+      "signal": "ETH_RADIO",
+      "notes": "Ethernet, COTS cable"
+    },
+    {
+      "id": "GND-BAT-PDP",
+      "from": {
+        "connector": "BAT",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "color": "black",
+      "signal": "GND",
+      "notes": "PDP ground to battery -"
+    },
+    {
+      "id": "GND-FEEDER-RANGE1",
+      "from": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "MPM2",
+        "pin": "2"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-FEEDER-RANGE2",
+      "from": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "MPM2",
+        "pin": "4"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-FEEDER-X60-A-N",
+      "from": {
+        "connector": "FEEDER-X60-A",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-FEEDER-X60-B-N",
+      "from": {
+        "connector": "FEEDER-X60-B",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-HOOD-X44-N",
+      "from": {
+        "connector": "HOOD-X44",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INDEXER-X60-A-N",
+      "from": {
+        "connector": "INDEXER-X60-A",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INDEXER-X60-B-N",
+      "from": {
+        "connector": "INDEXER-X60-B",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INTAKE-X44-A-N",
+      "from": {
+        "connector": "INTAKE-X44-A",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INTAKE-X44-B-N",
+      "from": {
+        "connector": "INTAKE-X44-B",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INTAKE-X60-A-N",
+      "from": {
+        "connector": "INTAKE-X60-A",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-INTAKE-X60-B-N",
+      "from": {
+        "connector": "INTAKE-X60-B",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-LL4",
+      "from": {
+        "connector": "LL4",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "MPM1",
+        "pin": "12"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-MITO-N",
+      "from": {
+        "connector": "MITO",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-MPM1-PDP",
+      "from": {
+        "connector": "MPM1",
+        "pin": "14"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-MPM2-PDP",
+      "from": {
+        "connector": "MPM2",
+        "pin": "14"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-PIGEON",
+      "from": {
+        "connector": "PIGEON",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "MPM1",
+        "pin": "10"
+      },
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-RADIO-N",
+      "from": {
+        "connector": "RADIO",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-RIO-N",
+      "from": {
+        "connector": "RIO",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SHOOTER-X60-A-N",
+      "from": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SHOOTER-X60-B-N",
+      "from": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SHOOTER-X60-C-N",
+      "from": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SHOOTER-X60-D-N",
+      "from": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BL-CC",
+      "from": {
+        "splice": "BL6"
+      },
+      "to": {
+        "connector": "SW-BL-CC",
+        "pin": "2"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BL-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "6"
+      },
+      "to": {
+        "splice": "BL6"
+      },
+      "color": "black",
+      "signal": "GND",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "GND-SW-BL-DRV-N",
+      "from": {
+        "connector": "SW-BL-DRV",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BL-STR-N",
+      "from": {
+        "connector": "SW-BL-STR",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BR-CC",
+      "from": {
+        "splice": "BR6"
+      },
+      "to": {
+        "connector": "SW-BR-CC",
+        "pin": "2"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BR-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "8"
+      },
+      "to": {
+        "splice": "BR6"
+      },
+      "color": "black",
+      "signal": "GND",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "GND-SW-BR-DRV-N",
+      "from": {
+        "connector": "SW-BR-DRV",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-BR-STR-N",
+      "from": {
+        "connector": "SW-BR-STR",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FL-CC",
+      "from": {
+        "splice": "FL6"
+      },
+      "to": {
+        "connector": "SW-FL-CC",
+        "pin": "2"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FL-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "2"
+      },
+      "to": {
+        "splice": "FL6"
+      },
+      "color": "black",
+      "signal": "GND",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "GND-SW-FL-DRV-N",
+      "from": {
+        "connector": "SW-FL-DRV",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FL-STR-N",
+      "from": {
+        "connector": "SW-FL-STR",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FR-CC",
+      "from": {
+        "splice": "FR6"
+      },
+      "to": {
+        "connector": "SW-FR-CC",
+        "pin": "2"
+      },
+      "gauge": "20AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FR-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "4"
+      },
+      "to": {
+        "splice": "FR6"
+      },
+      "color": "black",
+      "signal": "GND",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "GND-SW-FR-DRV-N",
+      "from": {
+        "connector": "SW-FR-DRV",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "GND-SW-FR-STR-N",
+      "from": {
+        "connector": "SW-FR-STR",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "26"
+      },
+      "gauge": "10AWG",
+      "color": "black",
+      "signal": "GND"
+    },
+    {
+      "id": "PWR-BAT-MCB",
+      "from": {
+        "connector": "BAT",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "MCB",
+        "pin": "1"
+      },
+      "color": "red",
+      "signal": "BAT_POS",
+      "notes": "Battery + to main breaker"
+    },
+    {
+      "id": "PWR-FEEDER-RANGE1",
+      "from": {
+        "connector": "MPM2",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE1",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM2_O1"
+    },
+    {
+      "id": "PWR-FEEDER-RANGE2",
+      "from": {
+        "connector": "MPM2",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "FEEDER-RANGE2",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM2_O2"
+    },
+    {
+      "id": "PWR-FEEDER-X60-A-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "18"
+      },
+      "to": {
+        "connector": "FEEDER-X60-A",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH17"
+    },
+    {
+      "id": "PWR-FEEDER-X60-B-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "19"
+      },
+      "to": {
+        "connector": "FEEDER-X60-B",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH18"
+    },
+    {
+      "id": "PWR-HOOD-X44-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "24"
+      },
+      "to": {
+        "connector": "HOOD-X44",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH23"
+    },
+    {
+      "id": "PWR-INDEXER-X60-A-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "16"
+      },
+      "to": {
+        "connector": "INDEXER-X60-A",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH15"
+    },
+    {
+      "id": "PWR-INDEXER-X60-B-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "17"
+      },
+      "to": {
+        "connector": "INDEXER-X60-B",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH16"
+    },
+    {
+      "id": "PWR-INTAKE-X44-A-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "14"
+      },
+      "to": {
+        "connector": "INTAKE-X44-A",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH13"
+    },
+    {
+      "id": "PWR-INTAKE-X44-B-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "15"
+      },
+      "to": {
+        "connector": "INTAKE-X44-B",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH14"
+    },
+    {
+      "id": "PWR-INTAKE-X60-A-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "12"
+      },
+      "to": {
+        "connector": "INTAKE-X60-A",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH11"
+    },
+    {
+      "id": "PWR-INTAKE-X60-B-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "13"
+      },
+      "to": {
+        "connector": "INTAKE-X60-B",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH12"
+    },
+    {
+      "id": "PWR-LL4",
+      "from": {
+        "connector": "MPM1",
+        "pin": "11"
+      },
+      "to": {
+        "connector": "LL4",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O6"
+    },
+    {
+      "id": "PWR-MCB-PDP",
+      "from": {
+        "connector": "MCB",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "PDP",
+        "pin": "25"
+      },
+      "color": "red",
+      "signal": "PWR_MAIN",
+      "notes": "Main breaker to PDP input"
+    },
+    {
+      "id": "PWR-MITO-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "11"
+      },
+      "to": {
+        "connector": "MITO",
+        "pin": "1"
+      },
+      "color": "red",
+      "signal": "PWR_12V_CH10"
+    },
+    {
+      "id": "PWR-PDP-MPM1",
+      "from": {
+        "connector": "PDP",
+        "pin": "27"
+      },
+      "to": {
+        "connector": "MPM1",
+        "pin": "13"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_IN",
+      "notes": "UNRESOLVED: PDP channel not identified"
+    },
+    {
+      "id": "PWR-PDP-MPM2",
+      "from": {
+        "connector": "PDP",
+        "pin": "28"
+      },
+      "to": {
+        "connector": "MPM2",
+        "pin": "13"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM2_IN",
+      "notes": "UNRESOLVED: PDP channel not identified"
+    },
+    {
+      "id": "PWR-PIGEON",
+      "from": {
+        "connector": "MPM1",
+        "pin": "9"
+      },
+      "to": {
+        "connector": "PIGEON",
+        "pin": "1"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O5"
+    },
+    {
+      "id": "PWR-RADIO-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "10"
+      },
+      "to": {
+        "connector": "RADIO",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH09"
+    },
+    {
+      "id": "PWR-RIO-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "9"
+      },
+      "to": {
+        "connector": "RIO",
+        "pin": "1"
+      },
+      "color": "red",
+      "signal": "PWR_12V_CH08"
+    },
+    {
+      "id": "PWR-SHOOTER-X60-A-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "20"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-A",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH19"
+    },
+    {
+      "id": "PWR-SHOOTER-X60-B-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "21"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-B",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH20"
+    },
+    {
+      "id": "PWR-SHOOTER-X60-C-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "22"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-C",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH21"
+    },
+    {
+      "id": "PWR-SHOOTER-X60-D-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "23"
+      },
+      "to": {
+        "connector": "SHOOTER-X60-D",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH22"
+    },
+    {
+      "id": "PWR-SW-BL-CC",
+      "from": {
+        "splice": "BL5"
+      },
+      "to": {
+        "connector": "SW-BL-CC",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O3"
+    },
+    {
+      "id": "PWR-SW-BL-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "5"
+      },
+      "to": {
+        "splice": "BL5"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O3",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "PWR-SW-BL-DRV-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "5"
+      },
+      "to": {
+        "connector": "SW-BL-DRV",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH04"
+    },
+    {
+      "id": "PWR-SW-BL-STR-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "6"
+      },
+      "to": {
+        "connector": "SW-BL-STR",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH05"
+    },
+    {
+      "id": "PWR-SW-BR-CC",
+      "from": {
+        "splice": "BR5"
+      },
+      "to": {
+        "connector": "SW-BR-CC",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O4"
+    },
+    {
+      "id": "PWR-SW-BR-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "7"
+      },
+      "to": {
+        "splice": "BR5"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O4",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "PWR-SW-BR-DRV-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "7"
+      },
+      "to": {
+        "connector": "SW-BR-DRV",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH06"
+    },
+    {
+      "id": "PWR-SW-BR-STR-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "8"
+      },
+      "to": {
+        "connector": "SW-BR-STR",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH07"
+    },
+    {
+      "id": "PWR-SW-FL-CC",
+      "from": {
+        "splice": "FL5"
+      },
+      "to": {
+        "connector": "SW-FL-CC",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O1"
+    },
+    {
+      "id": "PWR-SW-FL-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "1"
+      },
+      "to": {
+        "splice": "FL5"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O1",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "PWR-SW-FL-DRV-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "SW-FL-DRV",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH00"
+    },
+    {
+      "id": "PWR-SW-FL-STR-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "2"
+      },
+      "to": {
+        "connector": "SW-FL-STR",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH01"
+    },
+    {
+      "id": "PWR-SW-FR-CC",
+      "from": {
+        "splice": "FR5"
+      },
+      "to": {
+        "connector": "SW-FR-CC",
+        "pin": "1"
+      },
+      "gauge": "20AWG",
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O2"
+    },
+    {
+      "id": "PWR-SW-FR-CC-MPM",
+      "from": {
+        "connector": "MPM1",
+        "pin": "3"
+      },
+      "to": {
+        "splice": "FR5"
+      },
+      "color": "red",
+      "signal": "PWR_12V_MPM1_O2",
+      "notes": "MPM output lead (gauge not supplied)"
+    },
+    {
+      "id": "PWR-SW-FR-DRV-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "3"
+      },
+      "to": {
+        "connector": "SW-FR-DRV",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH02"
+    },
+    {
+      "id": "PWR-SW-FR-STR-P",
+      "from": {
+        "connector": "PDP",
+        "pin": "4"
+      },
+      "to": {
+        "connector": "SW-FR-STR",
+        "pin": "1"
+      },
+      "gauge": "10AWG",
+      "color": "red",
+      "signal": "PWR_12V_CH03"
+    },
+    {
+      "id": "USB-CAM1-OPI1",
+      "from": {
+        "connector": "CAM1",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "OPI1",
+        "pin": "4"
+      },
+      "signal": "USB_CAM1",
+      "notes": "USB camera cable"
+    },
+    {
+      "id": "USB-CAM2-OPI2",
+      "from": {
+        "connector": "CAM2",
+        "pin": "1"
+      },
+      "to": {
+        "connector": "OPI2",
+        "pin": "4"
+      },
+      "signal": "USB_CAM2",
+      "notes": "USB camera cable"
+    },
+    {
+      "id": "USB-RIO-CANIVORE",
+      "from": {
+        "connector": "RIO",
+        "pin": "6"
+      },
+      "to": {
+        "connector": "CANIVORE",
+        "pin": "3"
+      },
+      "signal": "USB_CANIVORE",
+      "notes": "USB-A, COTS cable"
+    },
+    {
+      "id": "USBC-MITO-OPI1-5V",
+      "from": {
+        "connector": "MITO",
+        "pin": "5"
+      },
+      "to": {
+        "connector": "OPI1",
+        "pin": "2"
+      },
+      "color": "red",
+      "signal": "USBC1_5V",
+      "notes": "USB-C power, COTS cable"
+    },
+    {
+      "id": "USBC-MITO-OPI1-GND",
+      "from": {
+        "connector": "MITO",
+        "pin": "6"
+      },
+      "to": {
+        "connector": "OPI1",
+        "pin": "3"
+      },
+      "color": "black",
+      "signal": "USBC1_GND",
+      "notes": "USB-C power, COTS cable"
+    },
+    {
+      "id": "USBC-MITO-OPI2-5V",
+      "from": {
+        "connector": "MITO",
+        "pin": "7"
+      },
+      "to": {
+        "connector": "OPI2",
+        "pin": "2"
+      },
+      "color": "red",
+      "signal": "USBC2_5V",
+      "notes": "USB-C power, COTS cable"
+    },
+    {
+      "id": "USBC-MITO-OPI2-GND",
+      "from": {
+        "connector": "MITO",
+        "pin": "8"
+      },
+      "to": {
+        "connector": "OPI2",
+        "pin": "3"
+      },
+      "color": "black",
+      "signal": "USBC2_GND",
+      "notes": "USB-C power, COTS cable"
+    }
+  ],
+  "cables": [],
+  "branches": [],
+  "splices": [
+    {
+      "id": "BL1",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BL: CAN-H, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-H13",
+        "CAN_IVORE-H14"
+      ]
+    },
+    {
+      "id": "BL2",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BL: CAN-L, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-L13",
+        "CAN_IVORE-L14"
+      ]
+    },
+    {
+      "id": "BL3",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BL: CAN-H, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-H15",
+        "CAN_IVORE-H16"
+      ]
+    },
+    {
+      "id": "BL4",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BL: CAN-L, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-L15",
+        "CAN_IVORE-L16"
+      ]
+    },
+    {
+      "id": "BL5",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-BL-CC: 20AWG pigtail V+ to MPM1 output 3 lead",
+      "wires": [
+        "PWR-SW-BL-CC",
+        "PWR-SW-BL-CC-MPM"
+      ]
+    },
+    {
+      "id": "BL6",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-BL-CC: 20AWG pigtail GND to MPM1 output 3 lead",
+      "wires": [
+        "GND-SW-BL-CC",
+        "GND-SW-BL-CC-MPM"
+      ]
+    },
+    {
+      "id": "BR1",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BR: CAN-H, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-H18",
+        "CAN_IVORE-H19"
+      ]
+    },
+    {
+      "id": "BR2",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BR: CAN-L, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-L18",
+        "CAN_IVORE-L19"
+      ]
+    },
+    {
+      "id": "BR3",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BR: CAN-H, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-H20",
+        "CAN_IVORE-H21"
+      ]
+    },
+    {
+      "id": "BR4",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve BR: CAN-L, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-L20",
+        "CAN_IVORE-L21"
+      ]
+    },
+    {
+      "id": "BR5",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-BR-CC: 20AWG pigtail V+ to MPM1 output 4 lead",
+      "wires": [
+        "PWR-SW-BR-CC",
+        "PWR-SW-BR-CC-MPM"
+      ]
+    },
+    {
+      "id": "BR6",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-BR-CC: 20AWG pigtail GND to MPM1 output 4 lead",
+      "wires": [
+        "GND-SW-BR-CC",
+        "GND-SW-BR-CC-MPM"
+      ]
+    },
+    {
+      "id": "FL1",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FL: CAN-H, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-H03",
+        "CAN_IVORE-H04"
+      ]
+    },
+    {
+      "id": "FL2",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FL: CAN-L, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-L03",
+        "CAN_IVORE-L04"
+      ]
+    },
+    {
+      "id": "FL3",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FL: CAN-H, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-H05",
+        "CAN_IVORE-H06"
+      ]
+    },
+    {
+      "id": "FL4",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FL: CAN-L, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-L05",
+        "CAN_IVORE-L06"
+      ]
+    },
+    {
+      "id": "FL5",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-FL-CC: 20AWG pigtail V+ to MPM1 output 1 lead",
+      "wires": [
+        "PWR-SW-FL-CC",
+        "PWR-SW-FL-CC-MPM"
+      ]
+    },
+    {
+      "id": "FL6",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-FL-CC: 20AWG pigtail GND to MPM1 output 1 lead",
+      "wires": [
+        "GND-SW-FL-CC",
+        "GND-SW-FL-CC-MPM"
+      ]
+    },
+    {
+      "id": "FR1",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FR: CAN-H, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-H08",
+        "CAN_IVORE-H09"
+      ]
+    },
+    {
+      "id": "FR2",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FR: CAN-L, pigtail pair 1 to drive-motor lead",
+      "wires": [
+        "CAN_IVORE-L08",
+        "CAN_IVORE-L09"
+      ]
+    },
+    {
+      "id": "FR3",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FR: CAN-H, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-H10",
+        "CAN_IVORE-H11"
+      ]
+    },
+    {
+      "id": "FR4",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "Swerve FR: CAN-L, pigtail pair 2 to steer-motor lead",
+      "wires": [
+        "CAN_IVORE-L10",
+        "CAN_IVORE-L11"
+      ]
+    },
+    {
+      "id": "FR5",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-FR-CC: 20AWG pigtail V+ to MPM1 output 2 lead",
+      "wires": [
+        "PWR-SW-FR-CC",
+        "PWR-SW-FR-CC-MPM"
+      ]
+    },
+    {
+      "id": "FR6",
+      "type": "crimp",
+      "part": "M81824/1-1",
+      "notes": "SW-FR-CC: 20AWG pigtail GND to MPM1 output 2 lead",
+      "wires": [
+        "GND-SW-FR-CC",
+        "GND-SW-FR-CC-MPM"
+      ]
+    }
+  ],
+  "labels": [],
+  "bom": [
+    {
+      "mpn": "BATTERY",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Robot battery (ASSUMPTION: not in description)",
+      "quantity": 1,
+      "usedBy": [
+        "connector:BAT"
+      ]
+    },
+    {
+      "mpn": "CTRE-CANCODER",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "CANcoder with pigtails: 20AWG power, 2x 22AWG CAN pairs",
+      "quantity": 4,
+      "usedBy": [
+        "connector:SW-BL-CC",
+        "connector:SW-BR-CC",
+        "connector:SW-FL-CC",
+        "connector:SW-FR-CC"
+      ]
+    },
+    {
+      "mpn": "CTRE-CANIVORE",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "CANivore: CAN-H, CAN-L, USB to roboRIO",
+      "quantity": 1,
+      "usedBy": [
+        "connector:CANIVORE"
+      ]
+    },
+    {
+      "mpn": "CTRE-CANRANGE",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "CANrange: power + CAN",
+      "quantity": 2,
+      "usedBy": [
+        "connector:FEEDER-RANGE1",
+        "connector:FEEDER-RANGE2"
+      ]
+    },
+    {
+      "mpn": "CTRE-KRAKEN-X44",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Kraken X44 (ASSUMPTION: same stud layout as X60)",
+      "quantity": 3,
+      "usedBy": [
+        "connector:HOOD-X44",
+        "connector:INTAKE-X44-A",
+        "connector:INTAKE-X44-B"
+      ]
+    },
+    {
+      "mpn": "CTRE-KRAKEN-X60",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Kraken X60: V+/V- studs, CAN-H/CAN-L studs",
+      "quantity": 18,
+      "usedBy": [
+        "connector:FEEDER-X60-A",
+        "connector:FEEDER-X60-B",
+        "connector:INDEXER-X60-A",
+        "connector:INDEXER-X60-B",
+        "connector:INTAKE-X60-A",
+        "connector:INTAKE-X60-B",
+        "connector:SHOOTER-X60-A",
+        "connector:SHOOTER-X60-B",
+        "connector:SHOOTER-X60-C",
+        "connector:SHOOTER-X60-D",
+        "connector:SW-BL-DRV",
+        "connector:SW-BL-STR",
+        "connector:SW-BR-DRV",
+        "connector:SW-BR-STR",
+        "connector:SW-FL-DRV",
+        "connector:SW-FL-STR",
+        "connector:SW-FR-DRV",
+        "connector:SW-FR-STR"
+      ]
+    },
+    {
+      "mpn": "CTRE-PDP-2.0",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "PDP 2.0: 24 channels, battery in, common ground",
+      "quantity": 1,
+      "usedBy": [
+        "connector:PDP"
+      ]
+    },
+    {
+      "mpn": "CTRE-PIGEON-2",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Pigeon IMU: power + CAN",
+      "quantity": 1,
+      "usedBy": [
+        "connector:PIGEON"
+      ]
+    },
+    {
+      "mpn": "FERRULE-20AWG",
+      "category": "terminal",
+      "unitOfMeasure": "ea",
+      "quantity": 2,
+      "usedBy": [
+        "connector:RADIO.pin:1",
+        "connector:RADIO.pin:2"
+      ]
+    },
+    {
+      "mpn": "LIMELIGHT-4",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Limelight 4: power + Ethernet",
+      "quantity": 1,
+      "usedBy": [
+        "connector:LL4"
+      ]
+    },
+    {
+      "mpn": "M81824/1-1",
+      "category": "splice",
+      "unitOfMeasure": "ea",
+      "quantity": 24,
+      "usedBy": [
+        "splice:BL1",
+        "splice:BL2",
+        "splice:BL3",
+        "splice:BL4",
+        "splice:BL5",
+        "splice:BL6",
+        "splice:BR1",
+        "splice:BR2",
+        "splice:BR3",
+        "splice:BR4",
+        "splice:BR5",
+        "splice:BR6",
+        "splice:FL1",
+        "splice:FL2",
+        "splice:FL3",
+        "splice:FL4",
+        "splice:FL5",
+        "splice:FL6",
+        "splice:FR1",
+        "splice:FR2",
+        "splice:FR3",
+        "splice:FR4",
+        "splice:FR5",
+        "splice:FR6"
+      ]
+    },
+    {
+      "mpn": "MAIN-BREAKER",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Main circuit breaker",
+      "quantity": 1,
+      "usedBy": [
+        "connector:MCB"
+      ]
+    },
+    {
+      "mpn": "MINI-POWER-MODULE",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Mini Power Module: 12V in + 6 low-current outputs",
+      "quantity": 2,
+      "usedBy": [
+        "connector:MPM1",
+        "connector:MPM2"
+      ]
+    },
+    {
+      "mpn": "MITOCANDRIA",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Mitocandria: 12V in, CAN, 2x USB-C 5V out",
+      "quantity": 1,
+      "usedBy": [
+        "connector:MITO"
+      ]
+    },
+    {
+      "mpn": "NI-ROBORIO",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "roboRIO: power, CAN, 1x Ethernet, USB-A",
+      "quantity": 1,
+      "usedBy": [
+        "connector:RIO"
+      ]
+    },
+    {
+      "mpn": "ORANGE-PI",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Orange Pi: Ethernet, USB-C power, USB (cameras)",
+      "quantity": 2,
+      "usedBy": [
+        "connector:OPI1",
+        "connector:OPI2"
+      ]
+    },
+    {
+      "mpn": "RING-#4",
+      "category": "terminal",
+      "unitOfMeasure": "ea",
+      "quantity": 42,
+      "usedBy": [
+        "connector:FEEDER-X60-A.pin:3",
+        "connector:FEEDER-X60-A.pin:4",
+        "connector:FEEDER-X60-B.pin:3",
+        "connector:FEEDER-X60-B.pin:4",
+        "connector:HOOD-X44.pin:3",
+        "connector:HOOD-X44.pin:4",
+        "connector:INDEXER-X60-A.pin:3",
+        "connector:INDEXER-X60-A.pin:4",
+        "connector:INDEXER-X60-B.pin:3",
+        "connector:INDEXER-X60-B.pin:4",
+        "connector:INTAKE-X44-A.pin:3",
+        "connector:INTAKE-X44-A.pin:4",
+        "connector:INTAKE-X44-B.pin:3",
+        "connector:INTAKE-X44-B.pin:4",
+        "connector:INTAKE-X60-A.pin:3",
+        "connector:INTAKE-X60-A.pin:4",
+        "connector:INTAKE-X60-B.pin:3",
+        "connector:INTAKE-X60-B.pin:4",
+        "connector:SHOOTER-X60-A.pin:3",
+        "connector:SHOOTER-X60-A.pin:4",
+        "connector:SHOOTER-X60-B.pin:3",
+        "connector:SHOOTER-X60-B.pin:4",
+        "connector:SHOOTER-X60-C.pin:3",
+        "connector:SHOOTER-X60-C.pin:4",
+        "connector:SHOOTER-X60-D.pin:3",
+        "connector:SHOOTER-X60-D.pin:4",
+        "connector:SW-BL-DRV.pin:3",
+        "connector:SW-BL-DRV.pin:4",
+        "connector:SW-BL-STR.pin:3",
+        "connector:SW-BL-STR.pin:4",
+        "connector:SW-BR-DRV.pin:3",
+        "connector:SW-BR-DRV.pin:4",
+        "connector:SW-BR-STR.pin:3",
+        "connector:SW-BR-STR.pin:4",
+        "connector:SW-FL-DRV.pin:3",
+        "connector:SW-FL-DRV.pin:4",
+        "connector:SW-FL-STR.pin:3",
+        "connector:SW-FL-STR.pin:4",
+        "connector:SW-FR-DRV.pin:3",
+        "connector:SW-FR-DRV.pin:4",
+        "connector:SW-FR-STR.pin:3",
+        "connector:SW-FR-STR.pin:4"
+      ]
+    },
+    {
+      "mpn": "RING-#6",
+      "category": "terminal",
+      "unitOfMeasure": "ea",
+      "quantity": 42,
+      "usedBy": [
+        "connector:FEEDER-X60-A.pin:1",
+        "connector:FEEDER-X60-A.pin:2",
+        "connector:FEEDER-X60-B.pin:1",
+        "connector:FEEDER-X60-B.pin:2",
+        "connector:HOOD-X44.pin:1",
+        "connector:HOOD-X44.pin:2",
+        "connector:INDEXER-X60-A.pin:1",
+        "connector:INDEXER-X60-A.pin:2",
+        "connector:INDEXER-X60-B.pin:1",
+        "connector:INDEXER-X60-B.pin:2",
+        "connector:INTAKE-X44-A.pin:1",
+        "connector:INTAKE-X44-A.pin:2",
+        "connector:INTAKE-X44-B.pin:1",
+        "connector:INTAKE-X44-B.pin:2",
+        "connector:INTAKE-X60-A.pin:1",
+        "connector:INTAKE-X60-A.pin:2",
+        "connector:INTAKE-X60-B.pin:1",
+        "connector:INTAKE-X60-B.pin:2",
+        "connector:SHOOTER-X60-A.pin:1",
+        "connector:SHOOTER-X60-A.pin:2",
+        "connector:SHOOTER-X60-B.pin:1",
+        "connector:SHOOTER-X60-B.pin:2",
+        "connector:SHOOTER-X60-C.pin:1",
+        "connector:SHOOTER-X60-C.pin:2",
+        "connector:SHOOTER-X60-D.pin:1",
+        "connector:SHOOTER-X60-D.pin:2",
+        "connector:SW-BL-DRV.pin:1",
+        "connector:SW-BL-DRV.pin:2",
+        "connector:SW-BL-STR.pin:1",
+        "connector:SW-BL-STR.pin:2",
+        "connector:SW-BR-DRV.pin:1",
+        "connector:SW-BR-DRV.pin:2",
+        "connector:SW-BR-STR.pin:1",
+        "connector:SW-BR-STR.pin:2",
+        "connector:SW-FL-DRV.pin:1",
+        "connector:SW-FL-DRV.pin:2",
+        "connector:SW-FL-STR.pin:1",
+        "connector:SW-FL-STR.pin:2",
+        "connector:SW-FR-DRV.pin:1",
+        "connector:SW-FR-DRV.pin:2",
+        "connector:SW-FR-STR.pin:1",
+        "connector:SW-FR-STR.pin:2"
+      ]
+    },
+    {
+      "mpn": "ROBOT-RADIO",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "Robot radio: power + Rio/AUX1/AUX2 Ethernet",
+      "quantity": 1,
+      "usedBy": [
+        "connector:RADIO"
+      ]
+    },
+    {
+      "mpn": "USB-CAMERA",
+      "category": "connector",
+      "unitOfMeasure": "ea",
+      "description": "USB camera",
+      "quantity": 2,
+      "usedBy": [
+        "connector:CAM1",
+        "connector:CAM2"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H01 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H01"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H02 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H02"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H03 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H03"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H04 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H04"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H05 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H05"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H06 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H06"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H07 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H07"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H08 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H08"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H09 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H09"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H10 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H10"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H11 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H11"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H12 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H12"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H13 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H13"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H14 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H14"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H15 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H15"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H16 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H16"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H17 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H17"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H18 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H18"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H19 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H19"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H20 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H20"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-H21 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-H21"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L01 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L01"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L02 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L02"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L03 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L03"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L04 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L04"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L05 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L05"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L06 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L06"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L07 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L07"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L08 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L08"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L09 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L09"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L10 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L10"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L11 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L11"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L12 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L12"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L13 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L13"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L14 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L14"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L15 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L15"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L16 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L16"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L17 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L17"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L18 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L18"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L19 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L19"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L20 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L20"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_IVORE-L21 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_IVORE-L21"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H01 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H01"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H02 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H02"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H03 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H03"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H04 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H04"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H05 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H05"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H06 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H06"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H07 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H07"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H08 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H08"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H09 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H09"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H10 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H10"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H11 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H11"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H12 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H12"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H13 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H13"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H14 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H14"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H15 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H15"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-H16 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-H16"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L01 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L01"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L02 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L02"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L03 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L03"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L04 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L04"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L05 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L05"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L06 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L06"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L07 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L07"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L08 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L08"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L09 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L09"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L10 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L10"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L11 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L11"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L12 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L12"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L13 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L13"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L14 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L14"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L15 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L15"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire CAN_RIO-L16 has no length. The cut list cannot include it.",
+      "target": "wire:CAN_RIO-L16"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire ETH-LL4-RIO has no length. The cut list cannot include it.",
+      "target": "wire:ETH-LL4-RIO"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire ETH-LL4-RIO has no color.",
+      "target": "wire:ETH-LL4-RIO"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire ETH-LL4-RIO has no gauge.",
+      "target": "wire:ETH-LL4-RIO"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire ETH-RADIO-OPI1 has no length. The cut list cannot include it.",
+      "target": "wire:ETH-RADIO-OPI1"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire ETH-RADIO-OPI1 has no color.",
+      "target": "wire:ETH-RADIO-OPI1"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire ETH-RADIO-OPI1 has no gauge.",
+      "target": "wire:ETH-RADIO-OPI1"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire ETH-RADIO-OPI2 has no length. The cut list cannot include it.",
+      "target": "wire:ETH-RADIO-OPI2"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire ETH-RADIO-OPI2 has no color.",
+      "target": "wire:ETH-RADIO-OPI2"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire ETH-RADIO-OPI2 has no gauge.",
+      "target": "wire:ETH-RADIO-OPI2"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire ETH-RIO-RADIO has no length. The cut list cannot include it.",
+      "target": "wire:ETH-RIO-RADIO"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire ETH-RIO-RADIO has no color.",
+      "target": "wire:ETH-RIO-RADIO"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire ETH-RIO-RADIO has no gauge.",
+      "target": "wire:ETH-RIO-RADIO"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-BAT-PDP has no length. The cut list cannot include it.",
+      "target": "wire:GND-BAT-PDP"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-BAT-PDP has no gauge.",
+      "target": "wire:GND-BAT-PDP"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-FEEDER-RANGE1 has no length. The cut list cannot include it.",
+      "target": "wire:GND-FEEDER-RANGE1"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-FEEDER-RANGE2 has no length. The cut list cannot include it.",
+      "target": "wire:GND-FEEDER-RANGE2"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-FEEDER-X60-A-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-FEEDER-X60-A-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-FEEDER-X60-B-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-FEEDER-X60-B-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-HOOD-X44-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-HOOD-X44-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INDEXER-X60-A-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INDEXER-X60-A-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INDEXER-X60-B-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INDEXER-X60-B-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INTAKE-X44-A-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INTAKE-X44-A-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INTAKE-X44-B-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INTAKE-X44-B-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INTAKE-X60-A-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INTAKE-X60-A-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-INTAKE-X60-B-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-INTAKE-X60-B-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-LL4 has no length. The cut list cannot include it.",
+      "target": "wire:GND-LL4"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-MITO-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-MITO-N"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-MITO-N has no gauge.",
+      "target": "wire:GND-MITO-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-MPM1-PDP has no length. The cut list cannot include it.",
+      "target": "wire:GND-MPM1-PDP"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-MPM1-PDP has no gauge.",
+      "target": "wire:GND-MPM1-PDP"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-MPM2-PDP has no length. The cut list cannot include it.",
+      "target": "wire:GND-MPM2-PDP"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-MPM2-PDP has no gauge.",
+      "target": "wire:GND-MPM2-PDP"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-PIGEON has no length. The cut list cannot include it.",
+      "target": "wire:GND-PIGEON"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-PIGEON has no gauge.",
+      "target": "wire:GND-PIGEON"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-RADIO-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-RADIO-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-RIO-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-RIO-N"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-RIO-N has no gauge.",
+      "target": "wire:GND-RIO-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SHOOTER-X60-A-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SHOOTER-X60-A-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SHOOTER-X60-B-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SHOOTER-X60-B-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SHOOTER-X60-C-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SHOOTER-X60-C-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SHOOTER-X60-D-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SHOOTER-X60-D-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BL-CC has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BL-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BL-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-SW-BL-CC-MPM has no gauge.",
+      "target": "wire:GND-SW-BL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BL-DRV-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BL-DRV-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BL-STR-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BL-STR-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BR-CC has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BR-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BR-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-SW-BR-CC-MPM has no gauge.",
+      "target": "wire:GND-SW-BR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BR-DRV-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BR-DRV-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-BR-STR-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-BR-STR-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FL-CC has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FL-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FL-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-SW-FL-CC-MPM has no gauge.",
+      "target": "wire:GND-SW-FL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FL-DRV-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FL-DRV-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FL-STR-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FL-STR-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FR-CC has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FR-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FR-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire GND-SW-FR-CC-MPM has no gauge.",
+      "target": "wire:GND-SW-FR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FR-DRV-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FR-DRV-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire GND-SW-FR-STR-N has no length. The cut list cannot include it.",
+      "target": "wire:GND-SW-FR-STR-N"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-BAT-MCB has no length. The cut list cannot include it.",
+      "target": "wire:PWR-BAT-MCB"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-BAT-MCB has no gauge.",
+      "target": "wire:PWR-BAT-MCB"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-FEEDER-RANGE1 has no length. The cut list cannot include it.",
+      "target": "wire:PWR-FEEDER-RANGE1"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-FEEDER-RANGE2 has no length. The cut list cannot include it.",
+      "target": "wire:PWR-FEEDER-RANGE2"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-FEEDER-X60-A-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-FEEDER-X60-A-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-FEEDER-X60-B-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-FEEDER-X60-B-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-HOOD-X44-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-HOOD-X44-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INDEXER-X60-A-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INDEXER-X60-A-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INDEXER-X60-B-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INDEXER-X60-B-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INTAKE-X44-A-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INTAKE-X44-A-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INTAKE-X44-B-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INTAKE-X44-B-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INTAKE-X60-A-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INTAKE-X60-A-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-INTAKE-X60-B-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-INTAKE-X60-B-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-LL4 has no length. The cut list cannot include it.",
+      "target": "wire:PWR-LL4"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-MCB-PDP has no length. The cut list cannot include it.",
+      "target": "wire:PWR-MCB-PDP"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-MCB-PDP has no gauge.",
+      "target": "wire:PWR-MCB-PDP"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-MITO-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-MITO-P"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-MITO-P has no gauge.",
+      "target": "wire:PWR-MITO-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-PDP-MPM1 has no length. The cut list cannot include it.",
+      "target": "wire:PWR-PDP-MPM1"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-PDP-MPM1 has no gauge.",
+      "target": "wire:PWR-PDP-MPM1"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-PDP-MPM2 has no length. The cut list cannot include it.",
+      "target": "wire:PWR-PDP-MPM2"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-PDP-MPM2 has no gauge.",
+      "target": "wire:PWR-PDP-MPM2"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-PIGEON has no length. The cut list cannot include it.",
+      "target": "wire:PWR-PIGEON"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-PIGEON has no gauge.",
+      "target": "wire:PWR-PIGEON"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-RADIO-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-RADIO-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-RIO-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-RIO-P"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-RIO-P has no gauge.",
+      "target": "wire:PWR-RIO-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SHOOTER-X60-A-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SHOOTER-X60-A-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SHOOTER-X60-B-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SHOOTER-X60-B-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SHOOTER-X60-C-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SHOOTER-X60-C-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SHOOTER-X60-D-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SHOOTER-X60-D-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BL-CC has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BL-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BL-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-SW-BL-CC-MPM has no gauge.",
+      "target": "wire:PWR-SW-BL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BL-DRV-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BL-DRV-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BL-STR-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BL-STR-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BR-CC has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BR-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BR-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-SW-BR-CC-MPM has no gauge.",
+      "target": "wire:PWR-SW-BR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BR-DRV-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BR-DRV-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-BR-STR-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-BR-STR-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FL-CC has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FL-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FL-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-SW-FL-CC-MPM has no gauge.",
+      "target": "wire:PWR-SW-FL-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FL-DRV-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FL-DRV-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FL-STR-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FL-STR-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FR-CC has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FR-CC"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FR-CC-MPM has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire PWR-SW-FR-CC-MPM has no gauge.",
+      "target": "wire:PWR-SW-FR-CC-MPM"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FR-DRV-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FR-DRV-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire PWR-SW-FR-STR-P has no length. The cut list cannot include it.",
+      "target": "wire:PWR-SW-FR-STR-P"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USB-CAM1-OPI1 has no length. The cut list cannot include it.",
+      "target": "wire:USB-CAM1-OPI1"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire USB-CAM1-OPI1 has no color.",
+      "target": "wire:USB-CAM1-OPI1"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USB-CAM1-OPI1 has no gauge.",
+      "target": "wire:USB-CAM1-OPI1"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USB-CAM2-OPI2 has no length. The cut list cannot include it.",
+      "target": "wire:USB-CAM2-OPI2"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire USB-CAM2-OPI2 has no color.",
+      "target": "wire:USB-CAM2-OPI2"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USB-CAM2-OPI2 has no gauge.",
+      "target": "wire:USB-CAM2-OPI2"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USB-RIO-CANIVORE has no length. The cut list cannot include it.",
+      "target": "wire:USB-RIO-CANIVORE"
+    },
+    {
+      "code": "HK-MFG-002",
+      "severity": "error",
+      "message": "Wire USB-RIO-CANIVORE has no color.",
+      "target": "wire:USB-RIO-CANIVORE"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USB-RIO-CANIVORE has no gauge.",
+      "target": "wire:USB-RIO-CANIVORE"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USBC-MITO-OPI1-5V has no length. The cut list cannot include it.",
+      "target": "wire:USBC-MITO-OPI1-5V"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USBC-MITO-OPI1-5V has no gauge.",
+      "target": "wire:USBC-MITO-OPI1-5V"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USBC-MITO-OPI1-GND has no length. The cut list cannot include it.",
+      "target": "wire:USBC-MITO-OPI1-GND"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USBC-MITO-OPI1-GND has no gauge.",
+      "target": "wire:USBC-MITO-OPI1-GND"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USBC-MITO-OPI2-5V has no length. The cut list cannot include it.",
+      "target": "wire:USBC-MITO-OPI2-5V"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USBC-MITO-OPI2-5V has no gauge.",
+      "target": "wire:USBC-MITO-OPI2-5V"
+    },
+    {
+      "code": "HK-MFG-001",
+      "severity": "warning",
+      "message": "Wire USBC-MITO-OPI2-GND has no length. The cut list cannot include it.",
+      "target": "wire:USBC-MITO-OPI2-GND"
+    },
+    {
+      "code": "HK-MFG-003",
+      "severity": "error",
+      "message": "Wire USBC-MITO-OPI2-GND has no gauge.",
+      "target": "wire:USBC-MITO-OPI2-GND"
+    }
+  ],
+  "layoutHints": [],
+  "exports": {}
+}

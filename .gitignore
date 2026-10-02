@@ -1,0 +1,6 @@
+node_modules/
+# Ignore build output, but commit the HIR baseline so the reproduce
+# workflow has something to diff against (git can't re-include a file
+# under a fully-ignored dir, so ignore the CONTENTS, not the dir).
+dist/*
+!dist/harness.json
